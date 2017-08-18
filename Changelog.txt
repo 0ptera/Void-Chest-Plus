@@ -1,0 +1,7 @@
+1.1.1
+- works with existing void-chest entities from other mods
+
+1.1.0
+- properly subscribe to events depending on existing void chest
+- distributed chest purge over 60 ticks
+- fixed localisation
