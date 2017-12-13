@@ -1,11 +1,11 @@
 {
   "name": "VoidChestPlus",
-  "version": "1.3.0",
+  "version": "2.0.0",
   "title": "Void Chest +",
   "author": "Optera",
   "contact": "https://forums.factorio.com/memberlist.php?mode=viewprofile&u=21729",
   "homepage": "",
   "description": "Rewrite of Buggi's Void Chest with improved performance.",
-	"factorio_version": "0.15",
-  "dependencies": ["base >= 0.15.32"]
+	"factorio_version": "0.16",
+  "dependencies": ["base >= 0.16.0"]
 }

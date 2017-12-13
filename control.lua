@@ -19,7 +19,7 @@ function OnEntityCreated(event)
     -- register to events after placing the first chest
     if #global.VoidChests == 1 then
       script.on_event(defines.events.on_tick, OnTick)
-      script.on_event({defines.events.on_preplayer_mined_item, defines.events.on_robot_pre_mined, defines.events.on_entity_died}, OnEntityRemoved)
+      script.on_event({defines.events.on_pre_player_mined_item, defines.events.on_robot_pre_mined, defines.events.on_entity_died}, OnEntityRemoved)
     end
 	end
 end
@@ -36,7 +36,7 @@ function OnEntityRemoved(event)
     -- unregister when last chest was removed
     if #global.VoidChests == 0 then
       script.on_event(defines.events.on_tick, nil)
-      script.on_event({defines.events.on_preplayer_mined_item, defines.events.on_robot_pre_mined, defines.events.on_entity_died}, nil)
+      script.on_event({defines.events.on_pre_player_mined_item, defines.events.on_robot_pre_mined, defines.events.on_entity_died}, nil)
     end
   end
 end
@@ -70,7 +70,7 @@ local function init_events()
 	script.on_event({defines.events.on_built_entity, defines.events.on_robot_built_entity}, OnEntityCreated)
 	if global.VoidChests and next(global.VoidChests) then
 		script.on_event(defines.events.on_tick, OnTick)
-		script.on_event({defines.events.on_preplayer_mined_item, defines.events.on_robot_pre_mined, defines.events.on_entity_died}, OnEntityRemoved)
+		script.on_event({defines.events.on_pre_player_mined_item, defines.events.on_robot_pre_mined, defines.events.on_entity_died}, OnEntityRemoved)
 	end
 end
 

@@ -1,3 +1,6 @@
+2.0.0
+- updated to Factorio 0.16
+
 1.3.0
 - rewrote tick to use stride with offset from eradicator
 - use clear_items_inside() instead of get_inventory(defines.inventory.chest).clear()
