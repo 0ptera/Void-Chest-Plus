@@ -1,35 +1,25 @@
-data:extend {
-  {
-    type = "container",
-    name = "void-chest",
-    icon = "__VoidChestPlus__/graphics/icon/voidchest.png",
-    icon_size = 32,
-    flags = {"placeable-neutral", "player-creation"},
-    minable = {mining_time = 1, result = "void-chest"},
-    max_health = 200,
-    corpse = "small-remnants",
-    open_sound = { filename = "__base__/sound/metallic-chest-open.ogg", volume=0.65 },
-    close_sound = { filename = "__base__/sound/metallic-chest-close.ogg", volume = 0.7 },
-    resistances =
-    {
-      {
-        type = "fire",
-        percent = 90
-      }
-    },
-    collision_box = {{-0.35, -0.35}, {0.35, 0.35}},
-    selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-    fast_replaceable_group = "container",
-    inventory_size = 48,
-    picture =
-    {
-      filename = "__VoidChestPlus__/graphics/voidchest.png",
-      priority = "extra-high",
-      width = 38,
-      height = 32,
-      shift = {0.1, 0}
-    }
-	},
+local vcp = table.deepcopy(data.raw.container["steel-chest"])
+vcp.type = "infinity-container"
+vcp.name = "void-chest"
+vcp.icon = "__VoidChestPlus__/graphics/icon/voidchest.png"
+vcp.icon_size = 32
+vcp.minable.result = "void-chest"
+vcp.order = "a[items]-c[void-chest]"
+vcp.picture =
+{
+  filename = "__VoidChestPlus__/graphics/voidchest.png",
+  priority = "extra-high",
+  width = 38,
+  height = 32,
+  shift = {0.1, 0}
+}
+vcp.gui_mode = "none" -- all, none, admins
+vcp.erase_contents_when_mined = true
+vcp.logistic_mode = nil
+vcp.logistic_slots_count = 12
+
+data:extend({
+  vcp,
   {
     type = "item",
     name = "void-chest",
@@ -54,4 +44,4 @@ data:extend {
     result = "void-chest"
 	},
 
-}
+})
