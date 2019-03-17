@@ -1,11 +1,11 @@
 {
   "name": "VoidChestPlus",
-  "version": "2.1.0",
+  "version": "2.2.1",
   "title": "Void Chest +",
   "author": "Optera",
   "contact": "https://forums.factorio.com/memberlist.php?mode=viewprofile&u=21729",
   "homepage": "",
   "description": "Repurposed infinity chest instantly destroying anything placed inside as UPS friendly as possible. Can't be used to generate items.",
-	"factorio_version": "0.16",
-  "dependencies": ["base >= 0.16.0"]
+	"factorio_version": "0.17",
+  "dependencies": ["base >= 0.17.0"]
 }

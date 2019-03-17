@@ -1,3 +1,9 @@
+--[[ Copyright (c) 2017 Optera
+ * Part of Void Chest Plus
+ *
+ * See LICENSE.md in the project directory for license information.
+--]]
+
 local vcp = table.deepcopy(data.raw.container["steel-chest"])
 vcp.type = "infinity-container"
 vcp.name = "void-chest"
@@ -11,7 +17,16 @@ vcp.picture =
   priority = "extra-high",
   width = 38,
   height = 32,
-  shift = {0.1, 0}
+  shift = {0.1, 0},
+  hr_version =
+  {
+    filename = "__VoidChestPlus__/graphics/hr-voidchest.png",
+    priority = "extra-high",
+    width = 77,
+    height = 66,
+    shift = {0.1, -0.05},
+    scale = 0.52,
+  }
 }
 vcp.gui_mode = "none" -- all, none, admins
 vcp.erase_contents_when_mined = true
@@ -25,7 +40,6 @@ data:extend({
     name = "void-chest",
     icon = "__VoidChestPlus__/graphics/icon/voidchest.png",
     icon_size = 32,
-    flags = {"goes-to-quickbar"},
     subgroup = "storage",
     order = "a[items]-c[void-chest]",
     place_result = "void-chest",
@@ -34,7 +48,7 @@ data:extend({
   {
     type = "recipe",
     name = "void-chest",
-    enabled = "true",
+    enabled = true,
     ingredients =
     {
       {"steel-chest", 1},
