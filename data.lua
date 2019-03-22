@@ -48,7 +48,7 @@ data:extend({
   {
     type = "recipe",
     name = "void-chest",
-    enabled = true,
+    enabled = false,
     ingredients =
     {
       {"steel-chest", 1},
@@ -57,5 +57,6 @@ data:extend({
     },
     result = "void-chest"
 	},
-
 })
+
+table.insert(data.raw["technology"]["advanced-material-processing"].effects, { type = "unlock-recipe", recipe = "void-chest" } )
