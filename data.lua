@@ -1,7 +1,7 @@
 --[[ Copyright (c) 2017 Optera
- * Part of Void Chest Plus
- *
- * See LICENSE.md in the project directory for license information.
+* Part of Void Chest Plus
+*
+* See LICENSE.md in the project directory for license information.
 --]]
 
 local vcp = table.deepcopy(data.raw.container["steel-chest"])
@@ -9,6 +9,7 @@ vcp.type = "infinity-container"
 vcp.name = "void-chest"
 vcp.icon = "__VoidChestPlus__/graphics/icon/voidchest.png"
 vcp.icon_size = 32
+vcp.icon_mipmaps = 1
 vcp.minable.result = "void-chest"
 vcp.order = "a[items]-c[void-chest]"
 vcp.picture =
@@ -44,7 +45,7 @@ data:extend({
     order = "a[items]-c[void-chest]",
     place_result = "void-chest",
     stack_size = 50
-	},
+  },
   {
     type = "recipe",
     name = "void-chest",
@@ -56,7 +57,7 @@ data:extend({
       {"electronic-circuit", 3}
     },
     result = "void-chest"
-	},
+  },
 })
 
 table.insert(data.raw["technology"]["advanced-material-processing"].effects, { type = "unlock-recipe", recipe = "void-chest" } )
