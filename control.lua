@@ -5,12 +5,9 @@
 --]]
 
 ---- runtime Events ----
-function OnEntityCreated(event)
-  if event.created_entity.name == "void-chest" then
-
-    event.created_entity.infinity_container_filters  = {}
-    event.created_entity.remove_unfiltered_items = true
-  end
+function OnChestCreated(entity)
+  entity.infinity_container_filters = {}
+  entity.remove_unfiltered_items = true
 end
 
 
@@ -28,7 +25,23 @@ local function init_chests()
 end
 
 local function init_events()
-  script.on_event({defines.events.on_built_entity, defines.events.on_robot_built_entity}, OnEntityCreated)
+  -- event filters turn a one liner into this mess
+  script.on_event( defines.events.on_built_entity,
+    function(event) OnChestCreated(event.created_entity) end,
+    {{ filter="name", name="void-chest" }}
+  )
+  script.on_event( defines.events.on_robot_built_entity,
+    function(event) OnChestCreated(event.created_entity) end,
+    {{ filter="name", name="void-chest" }}
+  )
+  script.on_event( {defines.events.script_raised_built, defines.events.script_raised_revive},
+    function(event)
+      local entity = event.created_entity or event.entity
+      if entity.valid and entity.name == "void-chest" then
+        OnChestCreated(entity)
+      end
+    end
+  )
 end
 
 script.on_load(function()
