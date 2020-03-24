@@ -6,8 +6,11 @@
 
 ---- runtime Events ----
 function OnChestCreated(entity)
-  entity.infinity_container_filters = {}
-  entity.remove_unfiltered_items = true
+  -- seems like there's too many mods out there still raising system events
+  if entity.valid and entity.name == "void-chest" then
+    entity.infinity_container_filters = {}
+    entity.remove_unfiltered_items = true
+  end
 end
 
 
@@ -35,12 +38,7 @@ local function init_events()
     {{ filter="name", name="void-chest" }}
   )
   script.on_event( {defines.events.script_raised_built, defines.events.script_raised_revive},
-    function(event)
-      local entity = event.created_entity or event.entity
-      if entity.valid and entity.name == "void-chest" then
-        OnChestCreated(entity)
-      end
-    end
+    function(event) OnChestCreated(event.created_entity or event.entity) end
   )
 end
 
