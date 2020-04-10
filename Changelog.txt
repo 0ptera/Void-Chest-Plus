@@ -1,8 +1,8 @@
 ---------------------------------------------------------------------------------------------------
-Version: 2.3.2
-Date: 2020-03-24
-  Features:
-    - support raising system events once again, apparently too many mods still do that
+Version: 2.3.3
+Date: 2020-04-10
+  Changes:
+    - Optimize filtered function calls
 ---------------------------------------------------------------------------------------------------
 Version: 2.3.1
 Date: 2020-02-16
