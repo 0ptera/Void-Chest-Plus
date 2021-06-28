@@ -8,25 +8,48 @@ local vcp = table.deepcopy(data.raw.container["steel-chest"])
 vcp.type = "infinity-container"
 vcp.name = "void-chest"
 vcp.icon = "__VoidChestPlus__/graphics/icon/voidchest.png"
-vcp.icon_size = 32
-vcp.icon_mipmaps = 1
+vcp.icon_size = 64
+vcp.icon_mipmaps = 4
 vcp.minable.result = "void-chest"
 vcp.order = "a[items]-c[void-chest]"
 vcp.picture =
 {
-  filename = "__VoidChestPlus__/graphics/voidchest.png",
-  priority = "extra-high",
-  width = 38,
-  height = 32,
-  shift = {0.1, 0},
-  hr_version =
+  layers =
   {
-    filename = "__VoidChestPlus__/graphics/hr-voidchest.png",
-    priority = "extra-high",
-    width = 77,
-    height = 66,
-    shift = {0.1, -0.05},
-    scale = 0.52,
+    {
+      filename = "__VoidChestPlus__/graphics/voidchest.png",
+      priority = "extra-high",
+      width = 33,
+      height = 37,
+      shift = util.by_pixel(0, -2),
+      hr_version =
+      {
+        filename = "__VoidChestPlus__/graphics/hr-voidchest.png",
+        priority = "extra-high",
+        width = 66,
+        height = 74,
+        shift = util.by_pixel(0, -2),
+        scale = 0.5
+      }
+    },
+    {
+      filename = "__VoidChestPlus__/graphics/voidchest-shadow.png",
+      priority = "extra-high",
+      width = 56,
+      height = 24,
+      shift = util.by_pixel(12, 5),
+      draw_as_shadow = true,
+      hr_version =
+      {
+        filename = "__VoidChestPlus__/graphics/hr-voidchest-shadow.png",
+        priority = "extra-high",
+        width = 112,
+        height = 46,
+        shift = util.by_pixel(12, 4.5),
+        draw_as_shadow = true,
+        scale = 0.5
+      }
+    }
   }
 }
 vcp.gui_mode = "none" -- all, none, admins
@@ -40,7 +63,8 @@ data:extend({
     type = "item",
     name = "void-chest",
     icon = "__VoidChestPlus__/graphics/icon/voidchest.png",
-    icon_size = 32,
+    icon_size = 64,
+    icon_mipmaps = 4,
     subgroup = "storage",
     order = "a[items]-c[void-chest]",
     place_result = "void-chest",
