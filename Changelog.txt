@@ -3,6 +3,8 @@ Version: 2.5.0
 Date: 2021-06-28
   Features:
     - new graphics by snouz #3
+    - French translation by snouz #3
+    - German Translation
 ---------------------------------------------------------------------------------------------------
 Version: 2.4.0
 Date: 2020-11-27
