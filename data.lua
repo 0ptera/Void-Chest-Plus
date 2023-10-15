@@ -55,7 +55,7 @@ vcp.picture =
 vcp.gui_mode = "none" -- all, none, admins
 vcp.erase_contents_when_mined = true
 vcp.logistic_mode = nil
-vcp.logistic_slots_count = 12
+vcp.inventory_size = 1
 
 data:extend({
   vcp,
